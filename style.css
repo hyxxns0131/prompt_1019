@@ -741,7 +741,8 @@ kbd {
   .card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .stage-inner { flex-direction: row; align-items: center; justify-content: space-between; }
   .stage-copy { flex: 1; align-self: flex-end; padding-bottom: 24px; }
-  .device-wrap { flex: none; margin: 0 24px 0 0; font-size: clamp(14px, 1.2vw, 17px); }
+  /* 폭과 높이 둘 다 고려해 기기 크기 결정 (낮은 창에서도 한 화면에 들어오게) */
+  .device-wrap { flex: none; margin: 0 24px 0 0; font-size: clamp(11px, min(1.2vw, calc((100svh - var(--header-h) - 150px) / 34)), 17px); }
   .toolbar { gap: 16px; }
 }
 
